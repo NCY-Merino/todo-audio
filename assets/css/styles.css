@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+body {
+    font-family: "Roboto", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+header {
+    grid-area: navbar;
+    background: #2E073F;
+    display: grid;
+    justify-content: start;
+    align-items: center;
+    color: white;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'logo menu';
+}
+.logo {
+    grid-area: logo;
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    margin-left: 20px;
+}
+.logo b {
+    font-weight: 700;
+}
+/** pie de pagina **/
+footer {
+    grid-area: pie-de-pagina;
+    background: #7A1CAC;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+/** menu **/
+.menu {
+    grid-area: menu;
+    background: #2E073F;
+}
+
+.menu .icon {
+    width: 29px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.menu .links {
+    display: none;
+}
+
+/** Menu de categorias **/
+.aside-bar {
+    background: #EBD3F8;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.aside-bar select {
+    border: 1px solid #EBD3F8;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/** seccion principal **/
+.grilla-de-productos {
+    grid-area: grilla-de-productos;
+    display: grid;
+    background-color: white;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    column-gap: 10px;
+    row-gap: 15px;
+    padding: 10px;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    align-items: stretch;
+    border: 1px solid #E6E6E6;
+    border-radius: 5px;
+    text-align: center;
+    height: 360px;
+    position: relative;
+}
+.card .contenedor-imagen {
+    height: 200px;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .contenedor-imagen img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+
+.card h4, .card h3 {
+    margin: 10px 0;
+}
+
+.card h4 {
+    font-size: medium;
+    font-weight: 300;
+}
+
+.card h3 {
+    display: flex;
+    height: 46px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 10px;
+    margin-bottom: 0;
+}
+
+.card button{
+    background-color: #7A1CAC;
+    color: white;
+    padding: 10px;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.card button:hover {
+    background-color: #AD49E1;
+    font-weight: 700;
+
+}
+
+.card .categoria {
+    position: absolute;
+    top: 10px;
+    padding: 5px 10px;
+    color: white;
+    left: 0;
+    font-size: 12px;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.gamer {
+    background-color: #1abec8;
+}
+.deportivo {
+    background-color: yellowgreen;
+}
+.in-ear {
+    background-color: blueviolet;
+}
+.earbuds {
+    background-color: #2E073F;
+}
+.neckband {
+    background-color:black;
+}
+/** paginador **/
+.paginador {
+    display: grid;
+    position: relative;
+}
+
+.paginador .pagination {
+    display: flex;
+    list-style: none;
+    margin: auto;
+}
+
+.paginador .pagination .page-item {
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    color: #7A1CAC;
+    background-color: #fff;
+    border: 1px solid #EBD3F8;
+    cursor: pointer;
+}
+
+/** Pseudo clase para redondear **/
+.paginador .pagination .page-item:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.paginador .pagination .page-item:first-child{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; 
+}
+
+/** body contenedor de template **/
+.grid-container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 75px auto 50px;
+    align-content: stretch;
+    grid-template-areas: 
+    'navbar'
+    'aside-bar'
+    'grilla-de-productos'
+    'pie-de-pagina';
+}
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+    .logo {
+        font-size: 20px;
+    }
+    .menu .icon {
+        display: none;
+    }
+    .menu {
+        display: flex;
+        align-items: end;
+        justify-content: right;
+        padding-right: 30px;
+    }
+    .menu .links {
+        display: flex;
+        flex-direction: row;
+        font-size: 13px;
+        gap: 15px;
+        justify-content: end;
+
+    }
+
+    .menu .links a {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .aside-bar {
+        justify-content: start;
+        align-items: center;
+        padding-top: 15px;
+    }
+
+    .aside-bar select {
+        padding: 10px;
+    }
+
+    .grid-container {
+        grid-template-areas: 
+        'navbar navbar'
+        'aside-bar grilla-de-productos'
+        'pie-de-pagina pie-de-pagina';
+        grid-template-columns: minmax(150px, 200px) auto;
+        grid-template-rows: 50px auto 50px;
+    }
+
+    .paginador{
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .grilla-de-productos {
+        position: relative;
+        padding-bottom: 60px;
+        padding-right: 0;
+        grid-template-columns: repeat(auto-fit, minmax(45%, 48%))
+    }
+
+}
+@media screen and (min-width: 993px) {
+    header {
+        display: grid;
+        justify-content: start;
+        align-items: center;
+        color: white;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'logo'
+        'menu';
+        grid-template-rows: 75px;
+        position: relative;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .menu .icon {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding: 10px;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .menu .links {
+        display: flex;
+        flex-direction: column;
+        font-size: 13px;
+        gap: 15px;
+        justify-content: end;
+        width: 100%;
+    }
+
+    .menu .links a {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+        font-size: 15px;
+        padding: 10px 0;
+    }
+
+    .menu .links a:hover, .menu .links a.activo {
+        background: #AD49E1;
+    }
+
+    .aside-bar select {
+        padding: 10px;
+        width: 70%;
+    }
+    
+    .grid-container {
+        grid-template-areas: 
+        'navbar aside-bar'
+        'navbar grilla-de-productos'
+        'pie-de-pagina paginador';
+        grid-template-columns: 200px auto;
+        grid-template-rows: 75px auto 50px;
+    }
+
+    .paginador{
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .grilla-de-productos {
+        position: relative;
+        padding-bottom: 60px;
+        padding-right: 0;
+        grid-template-columns: repeat(auto-fit, minmax(31%, 32%));
+    }
+}
